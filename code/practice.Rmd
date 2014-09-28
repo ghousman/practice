@@ -1,0 +1,21 @@
+---
+title: "practice"
+author: "Genevieve Housman"
+date: "Sunday, September 28, 2014"
+output: html_document
+---
+
+Rmd script that loads the data file, selects all the data for Albania+Afghanistan+Angola, and makes three scatter plots (one for each country) that each have year on the x-axis and GDP on the y-axis. Describe any trends you see for each country using markdown text.
+
+```{r}
+
+subset()
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
