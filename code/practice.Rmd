@@ -5,12 +5,31 @@ date: "Sunday, September 28, 2014"
 output: html_document
 ---
 
-Rmd script that loads the data file, selects all the data for Albania+Afghanistan+Angola, and makes three scatter plots (one for each country) that each have year on the x-axis and GDP on the y-axis. Describe any trends you see for each country using markdown text.
+# Rmd script that:
+
+(1)loads the data file, selects all the data for Albania+Afghanistan+Algeria, and makes three scatter plots (one for each country) that each have year on the x-axis and GDP on the y-axis. Describe any trends you see for each country using markdown text.
 
 ```{r}
-
-subset()
+data = read.table("gapminderDataFiveYear.txt", header=T, sep="\t")
+attach(data)
+data.Alb = subset(data, country=="Albania", select=c(country,year,pop,continent,lifeExp,gdpPercap))
+data.Afg = subset(data, country=="Afghanistan", select=c(country,year,pop,continent,lifeExp,gdpPercap))
+data.Alg = subset(data, country=="Algeria",select=c(country,year,pop,continent,lifeExp,gdpPercap))
 ```
+
+```{r, echo=FALSE}
+plot(data.Alb$year, data.Alb$gdpPercap, main="Albania GDP", xlab="Year", ylab="GDP Per Capita")
+plot(data.Afg$year, data.Afg$gdpPercap, main="Afghanistan GDP", xlab="Year", ylab="GDP Per Capita")
+plot(data.Alg$year, data.Alg$gdpPercap, main="Algeria GDP", xlab="Year", ylab="GDP Per Capita")
+```
+
+(2) Calculates the mean, min, and max life expectancies for each continent
+(hint: you use aggregate() if you like).
+Describe what you see in the results using a markdown text.
+
+(3) Make 2 histograms of global life expectancy. One with the default bin widths and one with narrower bin widths (you can check in help files for the syntax you might need to do this). Explain the differences and any interesting trends in markdown text.
+
+(4) Compile the final Rmd file to html, make sure it looks ok, and then commit this html file as well (should be in your working directory) and push everything to github.
 
 You can also embed plots, for example:
 
