@@ -7,7 +7,7 @@ output: html_document
 
 # Rmd script that:
 
-(1)loads the data file, selects all the data for Albania+Afghanistan+Algeria, and makes three scatter plots (one for each country) that each have year on the x-axis and GDP on the y-axis. Describe any trends you see for each country using markdown text.
+(1) Loads the data file, selects all the data for Albania+Afghanistan+Algeria, and makes three scatter plots (one for each country) that each have year on the x-axis and GDP on the y-axis. Describe any trends you see for each country using markdown text.
 
 ```{r}
 data = read.table("gapminderDataFiveYear.txt", header=T, sep="\t")
@@ -23,11 +23,49 @@ plot(data.Afg$year, data.Afg$gdpPercap, main="Afghanistan GDP", xlab="Year", yla
 plot(data.Alg$year, data.Alg$gdpPercap, main="Algeria GDP", xlab="Year", ylab="GDP Per Capita")
 ```
 
-(2) Calculates the mean, min, and max life expectancies for each continent
-(hint: you use aggregate() if you like).
-Describe what you see in the results using a markdown text.
+# TRENDS IN MARKDOWN TEXT
+# Albania - Starting in 1950, the GDP per capita displayed steady linear growth until 1990. Then it dropped before displaying a rapid exponential increase until the present.
+# Afghanistan - Starting in 1950, the GDP per capita displayed steady linear growth until just after 1960. Following this, GDP became highly scattered and random.
+# Algeria - Starting in 1950, the GDP per capita displayed rapid linear growth with dips in growth around 1960 and 1985-2000.
+
+
+(2) Calculates the mean, min, and max life expectancies for each continent. Describe what you see in the results using a markdown text.
+
+```{r, echo=FALSE}
+mean.Alb = mean(data.Alb$lifeExp)
+min.Alb = min(data.Alb$lifeExp)
+max.Alb = max(data.Alb$lifeExp)
+
+mean.Afg = mean(data.Afg$lifeExp)
+min.Afg = min(data.Afg$lifeExp)
+max.Afg = max(data.Afg$lifeExp)
+
+mean.Alg = mean(data.Alg$lifeExp)
+min.Alg = min(data.Alg$lifeExp)
+max.Alg = max(data.Alg$lifeExp)
+```
+
+```{r}
+print("Country","Mean GDP","Minimum GDP","Maximum GDP",sep="/t")
+print("Albania",mean.Alb,min.Alb,max.Alb,sep"/t")
+print("Afghlbania",mean.Alb,min.Alb,max.Alb,sep"/t")
+print("Albania",mean.Alb,min.Alb,max.Alb,sep"/t")
+```
+
+# TRENDS IN MARKDOWN TEXT
+# Albania - 
+# Afghanistan - 
+# Algeria - 
 
 (3) Make 2 histograms of global life expectancy. One with the default bin widths and one with narrower bin widths (you can check in help files for the syntax you might need to do this). Explain the differences and any interesting trends in markdown text.
+
+```{r}
+hist(data$lifeExp, col="red", main="Histogram (Default)", xlab="Life Expectancy")
+hist(data$lifeExp, breaks=50, col="purple", main="Histogram (Breaks=50)", xlab="Life Expectancy")
+```
+
+# TRENDS IN MARKDOWN TEXT
+# Default & Small Bins - Globally the highest frequency of life expectancy is just over 70 years old. This trend becomes smoother when the bins are smaller.
 
 (4) Compile the final Rmd file to html, make sure it looks ok, and then commit this html file as well (should be in your working directory) and push everything to github.
 
