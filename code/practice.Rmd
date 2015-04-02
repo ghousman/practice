@@ -29,22 +29,6 @@ For Albania, the GDP per capita displayed steady linear growth from 1950 to 1990
 
 (2) Calculates the mean, min, and max life expectancies for each continent. Describe what you see in the results using a markdown text.
 
-```{r, echo=FALSE}
-#mean.Alb = mean(data.Alb$lifeExp)
-#min.Alb = min(data.Alb$lifeExp)
-#max.Alb = max(data.Alb$lifeExp)
-#mean.Afg = mean(data.Afg$lifeExp)
-#min.Afg = min(data.Afg$lifeExp)
-#max.Afg = max(data.Afg$lifeExp)
-#mean.Alg = mean(data.Alg$lifeExp)
-#min.Alg = min(data.Alg$lifeExp)
-#max.Alg = max(data.Alg$lifeExp)
-#print("Country","Mean GDP","Minimum GDP","Maximum GDP",digits=NULL,sep="/t")
-#print("Albania",mean.Alb,min.Alb,max.Alb,sep"/t")
-#print("Afghlbania",mean.Alb,min.Alb,max.Alb,sep"/t")
-#print("Albania",mean.Alb,min.Alb,max.Alb,sep"/t")
-```
-
 Albania
 ```{r, echo=FALSE}
 summary(data.Alg$lifeExp)
